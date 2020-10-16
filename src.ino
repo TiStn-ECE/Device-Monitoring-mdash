@@ -66,7 +66,7 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();
   result = node.readInputRegisters(0x0001, 2);
-  while (WiFi.status() == WL_CONNECTED)
+  if (WiFi.status() == WL_CONNECTED)
   {
     if (result == node.ku8MBSuccess)
     {
